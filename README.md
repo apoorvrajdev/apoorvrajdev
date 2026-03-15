@@ -1,5 +1,37 @@
 # 💫 About Me:
-👋 Hi, I’m Apoorv Raj  <br>🎓 B.E from Chandigarh University  <br><br>🔭 I’m currently working on  <br>• Building a startup-focused **Smart City solution** using AI-driven insights  <br><br>🤝 I’m looking to collaborate on  <br>• AI & ML projects  <br>• Startup ideas & early-stage products  <br>• Research-driven problem solving  <br><br>💡 I’m looking for help with  <br>• Scaling AI systems  <br>• Real-world deployment & optimization  <br><br>🌱 I’m currently learning  <br>• Large Language Models (LLMs)  <br>• System Design  <br>• MLOps & production AI pipelines  <br><br>💬 Ask me about  <br>• Artificial Intelligence & Machine Learning  <br>• Entrepreneurship & tech startups  <br><br>🛠 Tech Stack  <br>• Python, AI/ML  <br>• AWS, CI/CD  <br>• Podman, Postman  <br><br>⚡ Fun fact  <br>• I enjoy turning complex real-world problems into scalable AI solutions<br>
+👋 Hi, I’m **Apoorv Raj**  <br>
+🎓 B.E in Computer Science — Chandigarh University  <br><br>
+
+🔭 I’m currently working on  <br>
+• Building **AI-driven infrastructure systems** as a Founding AI Engineer at Node2.io  <br>
+• Developing intelligent platforms for **predictive maintenance, energy optimization & smart buildings**  <br><br>
+
+🤝 I’m looking to collaborate on  <br>
+• AI & Machine Learning projects  <br>
+• Applied AI products & early-stage startups  <br>
+• Research-driven problem solving  <br><br>
+
+💡 I’m looking for help with  <br>
+• Scaling production AI systems  <br>
+• Distributed ML infrastructure & optimization  <br><br>
+
+🌱 I’m currently learning  <br>
+• Large Language Models (LLMs)  <br>
+• MLOps & AI system deployment  <br>
+• Advanced System Design  <br><br>
+
+💬 Ask me about  <br>
+• Artificial Intelligence & Machine Learning  <br>
+• AI startups & technology entrepreneurship  <br>
+• Research in applied AI systems  <br><br>
+
+🛠 Tech Stack  <br>
+• Python, Machine Learning, Deep Learning  <br>
+• AWS, CI/CD, AI deployment pipelines  <br>
+• APIs, PostgreSQL, Data pipelines  <br><br>
+
+⚡ Fun fact  <br>
+• I love building **real-world AI systems that operate at infrastructure scale**  <br>
 
 
 ## 🌐 Socials:
