@@ -69,12 +69,7 @@ I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where
 
 ## GitHub Stats
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=apoorvrajdev&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false&rank_icon=github" alt="GitHub Stats" />
-<img height="170" src="https://github-readme-streak-stats.herokuapp.com?user=apoorvrajdev&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" />
-
-<br/>
-
-<img height="155" src="https://github-readme-stats.vercel.app/api/top-langs/?username=apoorvrajdev&theme=tokyonight&hide_border=true&layout=compact&langs_count=8" alt="Top Languages" />
+<img src="https://github-readme-streak-stats.herokuapp.com?user=apoorvrajdev&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" />
 
 </div>
 
