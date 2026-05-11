@@ -8,7 +8,6 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-%234F8EF7?style=flat-square&logo=vercel&logoColor=white)](https://ai-engineer-portfolio-pi.vercel.app/)
 [![Email](https://img.shields.io/badge/Email-Reach%20Out-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:apoorvrajmgr@gmail.com)
 [![Mastodon](https://img.shields.io/badge/Mastodon-Follow-%232B90D9?style=flat-square&logo=mastodon&logoColor=white)](https://mastodon.social/@ApoorvRaj)
-[![Profile Views](https://komarev.com/ghpvc/?username=apoorvrajdev&style=flat-square&color=4F8EF7&label=PROFILE+VIEWS)](https://github.com/apoorvrajdev)
 
 </div>
 
