@@ -5,6 +5,7 @@
 <br/>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/apoorv-raj-1a35ba218)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-%234F8EF7?style=for-the-badge&logo=vercel&logoColor=white)](https://ai-engineer-portfolio-pi.vercel.app/)
 [![Email](https://img.shields.io/badge/Email-Reach%20Out-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:apoorvrajmgr@gmail.com)
 [![Mastodon](https://img.shields.io/badge/Mastodon-Follow-%232B90D9?style=for-the-badge&logo=mastodon&logoColor=white)](https://mastodon.social/@ApoorvRaj)
 [![Profile Views](https://komarev.com/ghpvc/?username=apoorvrajdev&style=for-the-badge&color=4F8EF7&label=PROFILE+VIEWS)](https://github.com/apoorvrajdev)
@@ -18,12 +19,12 @@
 I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where I lead the design and deployment of AI systems that operate at infrastructure scale. My focus is taking applied AI from research artifacts to production platforms that real businesses depend on.
 
 - Building AI-driven infrastructure for **predictive maintenance, energy optimization, and smart buildings**
-- Designing **scalable ML pipelines** and deployment workflows for production AI systems
+- Designing **scalable ML pipelines, REST APIs, and CI/CD-integrated deployment** workflows for production AI
 - Currently going deeper into **LLMs, MLOps, and large-scale system design**
-- Open to collaborating on **applied AI products, early-stage startups, and research-driven problem solving**
-- Ask me about **production AI, ML infrastructure, or building technology companies from zero**
+- IEEE-published researcher — *Multimodal AI (CNN + Transformer image captioning), 2024*
+- Open to collaborating on **applied AI products, early-stage startups, and research-driven work**
 
-> B.E. in Computer Science — Chandigarh University
+<sub>B.E. Computer Science, Chandigarh University &nbsp;·&nbsp; AWS Cloud Technical Essentials &nbsp;·&nbsp; ML in Production — DeepLearning.AI</sub>
 
 ---
 
@@ -66,18 +67,30 @@ I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where
 
 <div align="center">
 
-## GitHub Stats
+## GitHub Analytics
 
-<a href="https://github.com/apoorvrajdev">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=apoorvrajdev&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false" alt="GitHub Stats" />
-  <img height="165" src="https://github-readme-streak-stats.herokuapp.com?user=apoorvrajdev&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" />
-</a>
+<table>
+  <tr>
+    <td align="center">
+      <img height="180" src="https://github-readme-stats.vercel.app/api?username=apoorvrajdev&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false&rank_icon=github&card_width=445" alt="GitHub Stats" />
+    </td>
+    <td align="center">
+      <img height="180" src="https://github-readme-streak-stats.herokuapp.com?user=apoorvrajdev&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" />
+    </td>
+  </tr>
+</table>
 
 <br/>
 
-<a href="https://github.com/apoorvrajdev">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=apoorvrajdev&theme=tokyonight&hide_border=true&layout=compact&langs_count=8" alt="Top Languages" />
-</a>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=apoorvrajdev&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="Contribution Activity Graph" />
+
+<br/>
+
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=apoorvrajdev&theme=tokyonight&hide_border=true&layout=compact&langs_count=8&card_width=445" alt="Top Languages" />
+
+<br/><br/>
+
+<img src="https://github-profile-trophy.vercel.app/?username=apoorvrajdev&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" alt="GitHub Trophies" />
 
 </div>
 
