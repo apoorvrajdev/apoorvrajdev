@@ -67,30 +67,14 @@ I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where
 
 <div align="center">
 
-## GitHub Analytics
+## GitHub Stats
 
-<table>
-  <tr>
-    <td align="center">
-      <img height="180" src="https://github-readme-stats.vercel.app/api?username=apoorvrajdev&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false&rank_icon=github&card_width=445" alt="GitHub Stats" />
-    </td>
-    <td align="center">
-      <img height="180" src="https://github-readme-streak-stats.herokuapp.com?user=apoorvrajdev&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" />
-    </td>
-  </tr>
-</table>
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=apoorvrajdev&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false&rank_icon=github" alt="GitHub Stats" />
+<img height="170" src="https://github-readme-streak-stats.herokuapp.com?user=apoorvrajdev&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" />
 
 <br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=apoorvrajdev&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="Contribution Activity Graph" />
-
-<br/>
-
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=apoorvrajdev&theme=tokyonight&hide_border=true&layout=compact&langs_count=8&card_width=445" alt="Top Languages" />
-
-<br/><br/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=apoorvrajdev&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" alt="GitHub Trophies" />
+<img height="155" src="https://github-readme-stats.vercel.app/api/top-langs/?username=apoorvrajdev&theme=tokyonight&hide_border=true&layout=compact&langs_count=8" alt="Top Languages" />
 
 </div>
 
