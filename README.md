@@ -27,6 +27,21 @@ I'm Apoorv — a Python software engineer who builds backend services, REST APIs
 
 ---
 
+## Meet Me in 60 Seconds
+
+<div align="center">
+
+<!-- Video: hosted as a GitHub Release asset (intro-video-v1). Replace VIDEO_URL below to point at a different host. -->
+<a href="https://github.com/apoorvrajdev/apoorvrajdev/releases/download/intro-video-v1/apoorv-raj-introduction.mp4" title="Play the introduction video (MP4, 58 s, 1080p)">
+  <img src="assets/introduction-poster.jpg" alt="Play: Apoorv Raj, a 58-second introduction. Python software engineer turning machine-learning models into tested, deployed software. Shows Fraud Radar, the Image Captioning System and Node2.io work." width="840" />
+</a>
+
+<sub>▶ Click to play (MP4, 1920×1080, 58 s, narrated) &nbsp;·&nbsp; <a href="video/narration-script.md">Read the script</a> &nbsp;·&nbsp; <a href="video/README.md">How it was made</a></sub>
+
+</div>
+
+---
+
 ## Selected Projects
 
 ### Fraud Radar — real-time card-fraud scoring with explanations
