@@ -1,0 +1,6 @@
+# Local-only material: resumes and other personal documents
+resource/
+
+# Brag/HyperFrames production runs (large media, caches, renders). The slim,
+# reproducible source lives in video/.
+brag-output*/
