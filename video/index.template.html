@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Apoorv Raj — personal introduction</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Geist"; src: url("assets/fonts/Geist-latin.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/GeistMono-latin.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #080a0f; }
+      body { color: #eef1f6; font-family: "Geist", "Inter", sans-serif; -webkit-font-smoothing: antialiased; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #080a0f; }
+      .mono { font-family: "Geist Mono", "JetBrains Mono", monospace; }
+
+      /* ---------- persistent background ---------- */
+      #bg { position: absolute; inset: 0; overflow: hidden; }
+      #grid { position: absolute; left: 0; top: 0; width: 2760px; height: 1080px;
+        background-image: linear-gradient(#121722 2px, transparent 2px), linear-gradient(90deg, #121722 2px, transparent 2px);
+        background-size: 72px 72px; background-position: 0 30px;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 70%, transparent 100%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 70%, transparent 100%); opacity: 0.8; }
+      .glow-drift { position: absolute; }
+      #g1d { width: 1500px; height: 1500px; left: 760px; top: -560px; }
+      #g2d { width: 1200px; height: 1200px; left: -460px; top: 380px; }
+      .glow { width: 100%; height: 100%; border-radius: 50%; }
+      #g1 { background: radial-gradient(circle, rgba(37, 99, 235, 0.24) 0%, rgba(37, 99, 235, 0.08) 40%, transparent 68%); }
+      #g2 { background: radial-gradient(circle, rgba(139, 92, 246, 0.13) 0%, rgba(139, 92, 246, 0.05) 42%, transparent 68%); }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.55) 100%); }
+
+      /* ---------- HUD ---------- */
+      #hud { position: absolute; inset: 0; pointer-events: none; opacity: 0; }
+      .hud-tl { position: absolute; left: 120px; top: 58px; display: flex; align-items: center; gap: 18px; }
+      .wm-sm { font-weight: 600; font-size: 28px; letter-spacing: -0.02em; color: #eef1f6; }
+      .hud-sep { width: 2px; height: 24px; background: #262d3b; display: block; }
+      .hud-sub { font-size: 22px; letter-spacing: 0.04em; color: #97a0b0; }
+      .hud-tr { position: absolute; right: 120px; top: 62px; font-size: 22px; letter-spacing: 0.18em; color: #97a0b0; }
+
+      /* ---------- scenes ---------- */
+      .scene { position: absolute; inset: 0; }
+      .sx { position: absolute; inset: 0; }
+      .eyebrow { font-family: "Geist Mono", monospace; font-size: 24px; letter-spacing: 0.32em; color: #97a0b0; text-transform: uppercase; }
+      .chip { display: inline-flex; align-items: center; gap: 12px; height: 52px; padding: 0 22px; border: 2px solid #232a38; border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03); font-size: 25px; color: #d5dae3; white-space: nowrap; }
+      .chip i { display: block; width: 10px; height: 10px; border-radius: 50%; background: #4f8ef7; }
+      .chip.v i { background: #a78bfa; }
+      .link { font-family: "Geist Mono", monospace; font-size: 24px; color: #7fb0ff; letter-spacing: 0.01em; }
+
+      /* S1 */
+      #s1 .eyebrow { position: absolute; left: 0; width: 1920px; top: 318px; text-align: center; }
+      #s1-name { position: absolute; left: 0; width: 1920px; top: 372px; text-align: center; font-size: 156px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; }
+      #s1-role { position: absolute; left: 0; width: 1920px; top: 586px; text-align: center; font-size: 44px; font-weight: 400; color: #c5cbd6; letter-spacing: -0.01em; height: 60px; }
+      #s1-caret { display: inline-block; width: 3px; height: 44px; background: #4f8ef7; vertical-align: -6px; margin-left: 6px; }
+      #s1-chips { position: absolute; left: 0; width: 1920px; top: 700px; display: flex; justify-content: center; gap: 18px; }
+
+      /* S2 */
+      #s2-head { position: absolute; left: 120px; top: 150px; width: 1500px; font-size: 76px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; }
+      #s2-head .ln { display: block; }
+      #s2-head .ac { color: #4f8ef7; }
+      #s2-sub { position: absolute; left: 120px; top: 356px; width: 1500px; font-size: 30px; color: #97a0b0; }
+      #s2-rail { position: absolute; left: 120px; top: 639px; width: 1680px; height: 3px; background: #1a2130; transform-origin: left center; }
+      #s2-pulse { position: absolute; left: 112px; top: 630px; width: 20px; height: 20px; border-radius: 50%; background: #7fb0ff; box-shadow: 0 0 28px 8px rgba(79, 142, 247, 0.55); opacity: 0; }
+      .node { position: absolute; top: 516px; width: 250px; height: 162px; border: 2px solid #1f2430; border-radius: 16px; background: #0c1017; padding: 26px 24px 0; }
+      .node b { display: block; font-size: 29px; font-weight: 600; letter-spacing: -0.01em; }
+      .node span { display: block; margin-top: 10px; font-size: 20px; color: #97a0b0; line-height: 1.3; }
+      #n1 { left: 120px; } #n2 { left: 406px; } #n3 { left: 692px; } #n4 { left: 978px; } #n5 { left: 1264px; } #n6 { left: 1550px; }
+      #s2-foot { position: absolute; left: 120px; top: 790px; width: 1680px; display: flex; gap: 18px; }
+
+      /* S3 / S4 shared: browser frame */
+      .frame { position: absolute; width: 1040px; height: 629px; border: 2px solid #232a38; border-radius: 18px; background: #0c1017; overflow: hidden; }
+      .frame .bar { height: 44px; background: #10151e; border-bottom: 2px solid #1a2130; display: flex; align-items: center; padding-left: 18px; gap: 8px; }
+      .frame .bar i { width: 12px; height: 12px; border-radius: 50%; background: #2a3242; display: block; }
+      .frame .bar span { margin-left: 16px; font-family: "Geist Mono", monospace; font-size: 17px; color: #97a0b0; }
+      .frame .view { position: relative; width: 1036px; height: 583px; overflow: hidden; }
+      .frame .view img { position: absolute; left: 0; top: 0; width: 1036px; height: 583px; display: block; transform-origin: 30% 20%; }
+      .ptitle { font-size: 72px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+      .psub { font-size: 28px; color: #97a0b0; line-height: 1.35; }
+      .chips-col { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+      .note { font-size: 22px; color: #97a0b0; line-height: 1.45; }
+
+      #s3-frame { left: 120px; top: 230px; }
+      #s3-col { position: absolute; left: 1240px; top: 230px; width: 560px; }
+      #s3-col .eyebrow { margin-bottom: 14px; }
+      #s3-col .ptitle { margin-bottom: 14px; }
+      #s3-col .psub { margin-bottom: 30px; }
+      #s3-note { position: absolute; left: 1240px; top: 790px; width: 560px; }
+      #s3-link { position: absolute; left: 120px; top: 900px; }
+
+      #s4-frame { left: 760px; top: 170px; }
+      #s4-col { position: absolute; left: 120px; top: 170px; width: 580px; }
+      #s4-col .eyebrow { margin-bottom: 14px; }
+      #s4-col .ptitle { font-size: 64px; margin-bottom: 14px; }
+      #s4-col .psub { margin-bottom: 26px; }
+      #s4-resp { position: absolute; left: 760px; top: 830px; width: 1040px; height: 150px; border: 2px solid #2b2742; border-radius: 16px; background: #0d0b16; padding: 20px 28px; display: flex; gap: 28px; }
+      #s4-resp .col { flex: 1; min-width: 0; }
+      #s4-resp .lbl { font-family: "Geist Mono", monospace; font-size: 18px; letter-spacing: 0.18em; color: #b7a7f5; text-transform: uppercase; }
+      #s4-resp .cap { margin-top: 10px; font-size: 27px; font-weight: 500; line-height: 1.25; color: #eef1f6; }
+      #s4-resp .ms { margin-top: 8px; font-family: "Geist Mono", monospace; font-size: 18px; color: #97a0b0; }
+      #s4-link { position: absolute; left: 120px; top: 1008px; }
+
+      /* S5 */
+      #s5-head { position: absolute; left: 160px; top: 160px; font-size: 84px; font-weight: 700; letter-spacing: -0.03em; }
+      #s5-role { position: absolute; left: 160px; top: 282px; font-size: 34px; font-weight: 500; color: #d5dae3; }
+      #s5-meta { position: absolute; left: 160px; top: 338px; font-size: 25px; color: #97a0b0; }
+      .bul { position: absolute; left: 160px; width: 1560px; display: flex; gap: 22px; align-items: flex-start; font-size: 31px; line-height: 1.35; color: #e3e7ee; }
+      .bul i { flex: none; display: block; width: 12px; height: 12px; border-radius: 50%; background: #4f8ef7; margin-top: 15px; }
+      #b1 { top: 440px; } #b2 { top: 552px; } #b3 { top: 632px; } #b4 { top: 722px; }
+      #s5-prev { position: absolute; left: 160px; top: 880px; width: 1600px; font-size: 24px; color: #97a0b0; }
+
+      /* S6 */
+      #s6-name { position: absolute; left: 0; width: 1920px; top: 352px; text-align: center; font-size: 140px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; }
+      #s6-line { position: absolute; left: 0; width: 1920px; top: 540px; text-align: center; font-size: 44px; color: #c5cbd6; letter-spacing: -0.01em; }
+      #s6-line b { color: #4f8ef7; font-weight: 600; }
+      #s6-links { position: absolute; left: 0; width: 1920px; top: 690px; display: flex; justify-content: center; gap: 18px; }
+      #s6-cta { position: absolute; left: 0; width: 1920px; top: 800px; text-align: center; font-size: 24px; color: #97a0b0; letter-spacing: 0.02em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{END}}" data-width="1920" data-height="1080" data-fps="30">
+      <!-- persistent background (untimed) -->
+      <div id="bg" data-layout-ignore="">
+        <div id="grid"></div>
+        <div class="glow-drift" id="g1d"><div class="glow" id="g1"></div></div>
+        <div class="glow-drift" id="g2d"><div class="glow" id="g2"></div></div>
+        <div id="vignette"></div>
+      </div>
+
+      <!-- S1 — Identity -->
+      <section id="s1" class="clip scene" data-start="{{S1}}" data-duration="{{D1}}" data-track-index="1">
+        <div class="sx">
+          <div class="eyebrow" id="s1-eyebrow">Software engineer</div>
+          <h1 id="s1-name">Apoorv Raj</h1>
+          <div id="s1-role"><span id="s1-typed"></span><span id="s1-caret" data-layout-ignore=""></span></div>
+          <div id="s1-chips">
+            <span class="chip"><i></i>B.E. Computer Science, Chandigarh University · 2024</span>
+            <span class="chip"><i></i>IEEE-published · ICSPCRE 2024</span>
+            <span class="chip mono"><i></i>github.com/apoorvrajdev</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- S2 — Engineering focus -->
+      <section id="s2" class="clip scene" data-start="{{S2}}" data-duration="{{D2}}" data-track-index="1">
+        <div class="sx">
+          <h2 id="s2-head"><span class="ln">Models are the easy part.</span><span class="ln">I build the <span class="ac">tested software</span> around them.</span></h2>
+          <div id="s2-sub">Every project ships the same way: validated at the API boundary, correct in the database, tested before it deploys.</div>
+          <div id="s2-rail"></div>
+          <div id="s2-pulse" data-layout-ignore=""></div>
+          <div class="node" id="n1"><b>REST API</b><span>FastAPI · Pydantic validation</span></div>
+          <div class="node" id="n2"><b>Data layer</b><span>SQL · SQLAlchemy · migrations</span></div>
+          <div class="node" id="n3"><b>Inference</b><span>XGBoost · TensorFlow · LLMs</span></div>
+          <div class="node" id="n4"><b>Tests</b><span>pytest · Jest · Playwright</span></div>
+          <div class="node" id="n5"><b>CI/CD</b><span>GitHub Actions, gated deploys</span></div>
+          <div class="node" id="n6"><b>Deploy</b><span>Docker · Linux · Vercel</span></div>
+          <div id="s2-foot">
+            <span class="chip"><i></i>Python</span>
+            <span class="chip"><i></i>SQL · PostgreSQL · SQLite</span>
+            <span class="chip"><i></i>TypeScript · React · Next.js</span>
+            <span class="chip"><i></i>scikit-learn · XGBoost · TensorFlow</span>
+            <span class="chip"><i></i>LangChain tool calling</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- S3 — Fraud Radar -->
+      <section id="s3" class="clip scene" data-start="{{S3}}" data-duration="{{D3}}" data-track-index="1">
+        <div class="sx">
+          <div class="frame" id="s3-frame">
+            <div class="bar"><i></i><i></i><i></i><span>fraud-radar-lilac.vercel.app</span></div>
+            <div class="view">
+              <img id="s3-img1" data-layout-allow-overflow="" src="assets/img/fr-overview.png" alt="Fraud Radar overview dashboard">
+              <img id="s3-img2" data-layout-allow-overflow="" src="assets/img/fr-alerts.png" alt="Fraud Radar alerts queue" style="opacity: 0">
+            </div>
+          </div>
+          <div id="s3-col">
+            <div class="eyebrow">Project 01</div>
+            <div class="ptitle">Fraud Radar</div>
+            <div class="psub">Real-time card-fraud scoring with an explanation for every decision.</div>
+            <div class="chips-col" id="s3-chips">
+              <span class="chip"><i></i>6 business rules + XGBoost model</span>
+              <span class="chip"><i></i>SHAP attribution per decision</span>
+              <span class="chip"><i></i>p50 scoring latency 3.7 ms</span>
+              <span class="chip"><i></i>1,407 tests · ruff · mypy --strict</span>
+              <span class="chip"><i></i>Idempotent ingestion · audit log</span>
+            </div>
+          </div>
+          <div class="note" id="s3-note">PR-AUC 0.93 on held-out synthetic data; 0.77 on 284,807 real anonymised transactions (ULB) on an isolated track. Benchmarks, not production effectiveness.</div>
+          <div class="link" id="s3-link">github.com/apoorvrajdev/fraud-radar</div>
+        </div>
+      </section>
+
+      <!-- S4 — Image Captioning -->
+      <section id="s4" class="clip scene" data-start="{{S4}}" data-duration="{{D4}}" data-track-index="1">
+        <div class="sx">
+          <div id="s4-col">
+            <div class="eyebrow">Project 02</div>
+            <div class="ptitle">Image Captioning System</div>
+            <div class="psub">A CNN + Transformer model from my IEEE paper, rebuilt from a research notebook into a deployed app.</div>
+            <div class="chips-col" id="s4-chips">
+              <span class="chip v"><i></i>InceptionV3 + Transformer · TensorFlow</span>
+              <span class="chip v"><i></i>Typed Python package · FastAPI</span>
+              <span class="chip v"><i></i>Docker on Hugging Face Spaces</span>
+              <span class="chip v"><i></i>React app on Vercel</span>
+              <span class="chip v"><i></i>563 pytest + 27 Playwright, CI-gated</span>
+            </div>
+          </div>
+          <div class="frame" id="s4-frame">
+            <div class="bar"><i></i><i></i><i></i><span>image-captioning-system.vercel.app</span></div>
+            <div class="view"><img id="s4-img" data-layout-allow-overflow="" src="assets/img/cs-kitten-compare.png" alt="Caption Studio comparing greedy and beam-search captions"></div>
+          </div>
+          <div id="s4-resp">
+            <div class="col" id="s4-r1"><div class="lbl">Greedy · live response</div><div class="cap">“a cat is sitting on a keyboard of a computer”</div><div class="ms">990.4 ms · model v2.0.0</div></div>
+            <div class="col" id="s4-r2"><div class="lbl">Beam search · live response</div><div class="cap">“a close up of a cat laying on a keyboard”</div><div class="ms">1748.4 ms · model v2.0.0</div></div>
+          </div>
+          <div class="link" id="s4-link">github.com/apoorvrajdev/image-captioning-system</div>
+        </div>
+      </section>
+
+      <!-- S5 — Node2.io -->
+      <section id="s5" class="clip scene" data-start="{{S5}}" data-duration="{{D5}}" data-track-index="1">
+        <div class="sx">
+          <div class="eyebrow" style="position: absolute; left: 160px; top: 110px">Currently</div>
+          <h2 id="s5-head">Node2.io</h2>
+          <div id="s5-role">AI Engineer (Independent Contractor, Founding Contributor)</div>
+          <div id="s5-meta">Jan 2026 – present · PropTech SaaS (BuildingSync) · remote, with a Canada-based team</div>
+          <div class="bul" id="b1"><i></i><span>Python/FastAPI AI service: an LLM booking assistant built with LangChain tool calling that handles amenity capacity and time-slot rules</span></div>
+          <div class="bul" id="b2"><i></i><span>An engine that ranks resident complaints by severity</span></div>
+          <div class="bul" id="b3"><i></i><span>Resident and staff features in a Next.js + TypeScript app on PostgreSQL (Supabase) with row-level security</span></div>
+          <div class="bul" id="b4"><i></i><span>Jest unit and integration tests, code reviews, GitHub Actions CI/CD, Docker deployments and Linux debugging in Agile sprints</span></div>
+          <div id="s5-prev">Earlier: freelance software developer (2024 – Dec 2025) · ML engineering intern, Quicksilver Technologies (2023)</div>
+        </div>
+      </section>
+
+      <!-- S6 — Close -->
+      <section id="s6" class="clip scene" data-start="{{S6}}" data-duration="{{D6}}" data-track-index="1">
+        <div class="sx">
+          <h1 id="s6-name">Apoorv Raj</h1>
+          <div id="s6-line"><b>Backend engineering</b> × <b>applied AI</b> — tested, deployed, explained.</div>
+          <div id="s6-links">
+            <span class="chip mono"><i></i>github.com/apoorvrajdev</span>
+            <span class="chip mono"><i></i>linkedin.com/in/apoorv-raj-1a35ba218</span>
+            <span class="chip mono"><i></i>ai-engineer-portfolio-pi.vercel.app</span>
+          </div>
+          <div id="s6-cta">Explore the repositories, try the live demos, and say hello.</div>
+        </div>
+      </section>
+
+      <!-- HUD (untimed, faded by the timeline) -->
+      <div id="hud">
+        <div class="hud-tl"><span class="wm-sm">Apoorv Raj</span><span class="hud-sep"></span><span class="hud-sub mono">github.com/apoorvrajdev</span></div>
+        <div class="hud-tr mono" id="hud-sec"></div>
+      </div>
+
+      <!-- audio -->
+      <audio id="music" src="assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3" data-start="0" data-duration="{{END}}" data-track-index="10" data-volume="1" data-automation="{{AUTOMATION}}"></audio>
+      <audio id="vo1" src="assets/voice/line-1.wav" data-start="{{V1}}" data-duration="{{VD1}}" data-track-index="3" data-volume="1"></audio>
+      <audio id="vo2" src="assets/voice/line-2.wav" data-start="{{V2}}" data-duration="{{VD2}}" data-track-index="3" data-volume="1"></audio>
+      <audio id="vo3" src="assets/voice/line-3.wav" data-start="{{V3}}" data-duration="{{VD3}}" data-track-index="3" data-volume="1"></audio>
+      <audio id="vo4" src="assets/voice/line-4.wav" data-start="{{V4}}" data-duration="{{VD4}}" data-track-index="3" data-volume="1"></audio>
+      <audio id="vo5" src="assets/voice/line-5.wav" data-start="{{V5}}" data-duration="{{VD5}}" data-track-index="3" data-volume="1"></audio>
+      <audio id="vo6" src="assets/voice/line-6.wav" data-start="{{V6}}" data-duration="{{VD6}}" data-track-index="3" data-volume="1"></audio>
+      <audio id="sfx-name" src="assets/sfx/interface/drop_001.ogg" data-start="{{SFX1}}" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-frame" src="assets/sfx/impact/impactSoft_medium_001.ogg" data-start="{{SFX2}}" data-track-index="12" data-volume="0.5"></audio>
+      <audio id="sfx-cards" src="assets/sfx/interface/drop_002.ogg" data-start="{{SFX3}}" data-track-index="13" data-volume="0.45"></audio>
+      <audio id="sfx-close" src="assets/sfx/interface/bong_001.ogg" data-start="{{SFX4}}" data-track-index="14" data-volume="0.55"></audio>
+    </div>
+
+    <script>
+      // per-frame music RMS (0-100), pre-extracted at 30 fps (rms.py)
+      var RMS = {{RMS}};
+      var T = {{TIMING}}; // scene starts, narration starts/ends, end
+      var BEAT = {{BEAT}};
+
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+      const S = [T.s1, T.s2, T.s3, T.s4, T.s5, T.s6];
+      const END = T.end;
+
+      // ---------- scene transitions: outgoing lifts and fades, incoming rises in ----------
+      for (let i = 1; i < 6; i++) {
+        const t = S[i];
+        tl.to("#s" + i + " > .sx", { opacity: 0, y: -36, duration: 0.55, ease: "power2.in" }, t);
+        tl.fromTo("#s" + (i + 1) + " > .sx", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, t + 0.1);
+      }
+      // final fade to black-ish over the last 0.8 s
+      tl.to("#s6 > .sx", { opacity: 0, duration: 0.8, ease: "sine.in" }, END - 0.8);
+
+      // ---------- background: grid parallax on each scene change, slow glow drift ----------
+      S.slice(1).forEach((t, i) => tl.to("#grid", { x: -144 * (i + 1), duration: 0.8, ease: "power3.inOut" }, t));
+      [
+        [S[0], S[2], { x: -220, y: 70 }],
+        [S[2], S[4], { x: -480, y: 240 }],
+        [S[4], END, { x: -120, y: 110 }],
+      ].forEach(([a, b, to]) => tl.to("#g1d", { ...to, duration: b - a, ease: "sine.inOut" }, a));
+      tl.fromTo("#g2d", { x: 0, y: 0 }, { x: 340, y: -240, duration: END, ease: "none" }, 0);
+
+      // ---------- audio-reactive: music RMS breathes the main glow ----------
+      const g1 = $("#g1");
+      const NF = Math.min(RMS.length, Math.ceil(END * 30));
+      const au = { f: 0 };
+      tl.fromTo(au, { f: 0 }, { f: NF - 1, duration: (NF - 1) / 30, ease: "none",
+        onUpdate() {
+          const i = Math.max(0, Math.min(NF - 1, Math.round(au.f)));
+          const r = RMS[i] / 100;
+          g1.style.transform = "scale(" + (0.95 + 0.1 * r).toFixed(4) + ")";
+          g1.style.opacity = (0.62 + 0.38 * r).toFixed(3);
+        } }, 0);
+
+      // ---------- HUD ----------
+      tl.to("#hud", { opacity: 1, duration: 0.6, ease: "sine.inOut" }, S[1] + 0.3);
+      tl.to("#hud", { opacity: 0, duration: 0.5, ease: "sine.inOut" }, S[5]);
+      const hudSec = $("#hud-sec");
+      const secLabels = ["", "WHAT I BUILD", "PROJECT 01", "PROJECT 02", "EXPERIENCE", ""];
+      for (let i = 1; i < 5; i++) {
+        tl.to(hudSec, { opacity: 0, duration: 0.2, ease: "none", onComplete() { hudSec.textContent = secLabels[i]; }, onReverseComplete() { hudSec.textContent = secLabels[i - 1]; } }, S[i] - 0.05);
+        tl.to(hudSec, { opacity: 1, duration: 0.3, ease: "none" }, S[i] + 0.3);
+      }
+
+      // ---------- S1: identity ----------
+      tl.fromTo("#s1-eyebrow", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.2);
+      // beat-locked: 0.56 s — the name lands on the first beat
+      tl.fromTo("#s1-name", { opacity: 0, y: 40, scale: 0.98 }, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "expo.out" }, 0.56);
+      const ROLE = "Python · backend systems · applied AI";
+      const typed = $("#s1-typed");
+      const ty = { n: 0 };
+      tl.fromTo(ty, { n: 0 }, { n: ROLE.length, duration: 1.7, ease: "none", onUpdate() { typed.textContent = ROLE.slice(0, Math.round(ty.n)); } }, 1.4);
+      tl.set("#s1-caret", { opacity: 0 }, 0);
+      tl.fromTo("#s1-caret", { opacity: 1 }, { opacity: 0, duration: 0.42, ease: "steps(1)", repeat: 13, yoyo: true, immediateRender: false }, 1.3);
+      // beat-grid: chips on alternate beats from 3.82 s, then hold
+      [3.82, 4.91, 6.0].forEach((t, i) => tl.fromTo("#s1-chips .chip:nth-child(" + (i + 1) + ")", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, t));
+
+      // ---------- S2: engineering focus ----------
+      tl.fromTo("#s2-head .ln", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out", stagger: 0.12 }, S[1] + 0.35);
+      tl.fromTo("#s2-sub", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, S[1] + 0.9);
+      tl.fromTo("#s2-rail", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "power2.inOut" }, S[1] + 1.2);
+      const nodeT = [];
+      for (let i = 0; i < 6; i++) nodeT.push(S[1] + 1.3 + i * BEAT); // beat-grid: one node per beat
+      nodeT.forEach((t, i) => tl.fromTo("#n" + (i + 1), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, t));
+      // the pulse travels the rail after the nodes exist; each node lights as it passes
+      const P0 = S[1] + 5.0;
+      tl.set("#s2-pulse", { x: 0, opacity: 0 }, 0);
+      tl.to("#s2-pulse", { opacity: 1, duration: 0.15, ease: "none" }, P0);
+      tl.to("#s2-pulse", { x: 1680, duration: 2.4, ease: "none" }, P0);
+      tl.to("#s2-pulse", { opacity: 0, duration: 0.3, ease: "none" }, P0 + 2.4);
+      for (let i = 0; i < 6; i++) {
+        const cx = 125 + i * 286; // node centre offset along the rail
+        tl.fromTo("#n" + (i + 1), { borderColor: "#1f2430" }, { borderColor: "#3b82f6", duration: 0.25, ease: "none", immediateRender: false }, P0 + 2.4 * (cx / 1680));
+      }
+      tl.fromTo("#s2-foot .chip", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.5)", stagger: 0.09 }, S[1] + 6.2);
+      // keep something alive while the narration finishes: a slow secondary pulse
+      tl.to("#s2-pulse", { opacity: 0.0, duration: 0.01 }, P0 + 2.8);
+      tl.fromTo("#s2-rail", { backgroundColor: "#1a2130" }, { backgroundColor: "#2a3650", duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, S[1] + 8.0);
+
+      // ---------- S3: Fraud Radar ----------
+      tl.fromTo("#s3-frame", { opacity: 0, y: 40, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "expo.out" }, S[2] + 0.35);
+      tl.fromTo("#s3-img1", { scale: 1 }, { scale: 1.12, duration: S[3] - S[2], ease: "none" }, S[2]);
+      tl.fromTo("#s3-img2", { scale: 1.05 }, { scale: 1.14, duration: S[3] - S[2] - 5.4, ease: "none" }, S[2] + 5.4);
+      tl.to("#s3-img2", { opacity: 1, duration: 0.7, ease: "sine.inOut" }, S[2] + 5.6);
+      tl.fromTo("#s3-col .eyebrow", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, S[2] + 0.5);
+      tl.fromTo("#s3-col .ptitle", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, S[2] + 0.6);
+      tl.fromTo("#s3-col .psub", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, S[2] + 1.0);
+      // beat-grid: five chips on alternate beats, then hold
+      for (let i = 0; i < 5; i++) tl.fromTo("#s3-chips .chip:nth-child(" + (i + 1) + ")", { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, S[2] + 1.6 + i * 2 * BEAT);
+      tl.fromTo("#s3-note", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, S[2] + 7.4);
+      tl.fromTo("#s3-link", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, S[2] + 1.4);
+
+      // ---------- S4: Image Captioning ----------
+      tl.fromTo("#s4-frame", { opacity: 0, y: 40, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "expo.out" }, S[3] + 0.35);
+      tl.fromTo("#s4-img", { scale: 1, transformOrigin: "62% 62%" }, { scale: 1.22, transformOrigin: "62% 62%", duration: S[4] - S[3], ease: "sine.inOut" }, S[3]);
+      tl.fromTo("#s4-col .eyebrow", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, S[3] + 0.5);
+      tl.fromTo("#s4-col .ptitle", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, S[3] + 0.6);
+      tl.fromTo("#s4-col .psub", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, S[3] + 1.0);
+      for (let i = 0; i < 5; i++) tl.fromTo("#s4-chips .chip:nth-child(" + (i + 1) + ")", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, S[3] + 1.6 + i * 2 * BEAT);
+      // the live API responses land as cards (SFX drop_002 at the same time)
+      tl.fromTo("#s4-resp", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, T.sfx3);
+      tl.fromTo("#s4-r1", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "none" }, T.sfx3 + 0.3);
+      tl.fromTo("#s4-r2", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "none" }, T.sfx3 + 0.3 + BEAT);
+      tl.fromTo("#s4-link", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, S[3] + 1.4);
+
+      // ---------- S5: Node2.io ----------
+      tl.fromTo("#s5 .eyebrow", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, S[4] + 0.35);
+      tl.fromTo("#s5-head", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, S[4] + 0.45);
+      tl.fromTo("#s5-role", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, S[4] + 0.8);
+      tl.fromTo("#s5-meta", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, S[4] + 1.1);
+      // beat-grid: bullets on alternate beats from S5 + 1.9 s, then hold
+      for (let i = 0; i < 4; i++) {
+        const t = S[4] + 1.9 + i * 2 * BEAT;
+        tl.fromTo("#b" + (i + 1), { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, t);
+      }
+      tl.fromTo("#s5-prev", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, S[4] + 7.2);
+
+      // ---------- S6: close ----------
+      // beat-locked: the name lands with bong_001
+      tl.fromTo("#s6-name", { opacity: 0, y: 36, scale: 0.98 }, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "expo.out" }, T.sfx4);
+      tl.fromTo("#s6-line", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, T.sfx4 + 0.5);
+      [0, 1, 2].forEach((i) => tl.fromTo("#s6-links .chip:nth-child(" + (i + 1) + ")", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, T.sfx4 + 1.2 + i * 2 * BEAT));
+      tl.fromTo("#s6-cta", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, T.sfx4 + 4.6);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
