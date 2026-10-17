@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=4F8EF7&center=true&vCenter=true&width=720&lines=Hi%2C+I'm+Apoorv+Raj;Founding+AI+Engineer+%40+Node2.io;Building+AI+Infrastructure+at+Scale;Turning+Models+Into+Production+Systems" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=4F8EF7&center=true&vCenter=true&width=720&lines=Hi%2C+I'm+Apoorv+Raj;Python+Software+Engineer;Backend%2C+REST+APIs+and+Applied+ML;Turning+Models+Into+Tested+Software" alt="Typing SVG" />
 
 <br/>
 
@@ -15,15 +15,15 @@
 
 ## About Me
 
-I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where I lead the design and deployment of AI systems that operate at infrastructure scale. My focus is taking applied AI from research artifacts to production platforms that real businesses depend on.
+I'm Apoorv — a Python software engineer who builds backend services, REST APIs and data-driven applications, and who likes taking machine-learning models the rest of the way: validated inputs, reliable data handling, automated tests and repeatable deployments.
 
-- Building AI-driven infrastructure for **predictive maintenance, energy optimization, and smart buildings**
-- Designing **scalable ML pipelines, REST APIs, and CI/CD-integrated deployment** workflows for production AI
-- Currently going deeper into **LLMs, MLOps, and large-scale system design**
-- IEEE-published researcher — *Multimodal AI (CNN + Transformer image captioning), 2024*
-- Open to collaborating on **applied AI products, early-stage startups, and research-driven work**
+- **Now:** AI Engineer (independent contractor, founding contributor) at **[Node2.io](https://www.node2.io)** — Python/FastAPI AI services for a PropTech SaaS, including an LLM booking assistant built with LangChain tool calling, a complaint-prioritisation engine, and resident/staff features in a Next.js + TypeScript app on PostgreSQL (Supabase)
+- **Backend & data:** FastAPI, Pydantic validation, SQLAlchemy, schema design, constraints and Alembic migrations on PostgreSQL and SQLite
+- **Applied ML:** XGBoost and TensorFlow models served behind tested APIs, with evaluation and explainability (SHAP) treated as part of the product
+- **Research:** IEEE-published — *AI Narratives: Bridging Visual Content and Linguistic Expression* (CNN + Transformer image captioning), ICSPCRE 2024
+- Open to software engineering and applied-AI roles, and to collaborating on research-driven projects
 
-<sub>B.E. Computer Science, Chandigarh University &nbsp;·&nbsp; AWS Cloud Technical Essentials &nbsp;·&nbsp; ML in Production — DeepLearning.AI</sub>
+<sub>B.E. Computer Science & Engineering, Chandigarh University (2024) &nbsp;·&nbsp; Python for Data Science, AI & Development — IBM &nbsp;·&nbsp; AWS Cloud Technical Essentials — AWS</sub>
 
 ---
 
@@ -32,49 +32,54 @@ I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where
 **Languages**
 
 ![Python](https://img.shields.io/badge/Python-3670A0?style=flat-square&logo=python&logoColor=ffdd54)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23323330?style=flat-square&logo=javascript&logoColor=%23F7DF1E)
-![Java](https://img.shields.io/badge/Java-%23ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-%2307405e?style=flat-square&logo=postgresql&logoColor=white)
-
-**AI / ML**
-
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C?style=flat-square&logo=PyTorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00?style=flat-square&logo=TensorFlow&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-%23013243?style=flat-square&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-%23150458?style=flat-square&logo=pandas&logoColor=white)
-![LLMs](https://img.shields.io/badge/LLMs-%23412991?style=flat-square&logo=openai&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330?style=flat-square&logo=javascript&logoColor=%23F7DF1E)
 
 **Backend & APIs**
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=flat-square&logo=node.js&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white)
 ![REST APIs](https://img.shields.io/badge/REST_APIs-%23009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-%2320232a?style=flat-square&logo=react&logoColor=%2361DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white)
 
 **Databases**
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192?style=flat-square&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b?style=flat-square&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-%2307405e?style=flat-square&logo=sqlite&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
+![Alembic](https://img.shields.io/badge/Alembic-migrations-%23455A64?style=flat-square)
 
-**Cloud & Deployment**
+**Data & ML**
 
-![AWS](https://img.shields.io/badge/AWS-%23FF9900?style=flat-square&logo=amazon-aws&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-%23150458?style=flat-square&logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-EB6F2D?style=flat-square)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00?style=flat-square&logo=TensorFlow&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+
+**Testing & Delivery**
+
+![pytest](https://img.shields.io/badge/pytest-%23ffffff?style=flat-square&logo=pytest&logoColor=2f9fe3)
+![Jest](https://img.shields.io/badge/Jest-%23C21325?style=flat-square&logo=jest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-%232088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-%232496ED?style=flat-square&logo=docker&logoColor=white)
-![CI/CD](https://img.shields.io/badge/CI%2FCD-%232088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-%23000000?style=flat-square&logo=vercel&logoColor=white)
-![Render](https://img.shields.io/badge/Render-%2346E3B7?style=flat-square&logo=render&logoColor=white)
-![Netlify](https://img.shields.io/badge/Netlify-%23000000?style=flat-square&logo=netlify&logoColor=%2300C7B7)
-![Heroku](https://img.shields.io/badge/Heroku-%23430098?style=flat-square&logo=heroku&logoColor=white)
-
-**Tools & Design**
-
-![Git](https://img.shields.io/badge/Git-%23F05033?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-%23121011?style=flat-square&logo=github&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-%23F24E1E?style=flat-square&logo=figma&logoColor=white)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=Arduino&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-%23000000?style=flat-square&logo=vercel&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging_Face-Spaces-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+
+---
+
+## Experience & Education
+
+- **Node2.io** — AI Engineer (Independent Contractor, Founding Contributor) · Jan 2026 – present · PropTech SaaS, remote with a Canada-based team
+- **Freelance Software Developer** — independent client projects · 2024 – Dec 2025
+- **Quicksilver Technologies Pvt. Ltd.** — ML Engineering Intern · May – Jul 2023 · Python data-processing scripts, debugging tools and unit tests for validation workflows
+- **Chandigarh University** — B.E. Computer Science and Engineering, CGPA 7.66/10 · 2024
+- **Publication** — [AI Narratives: Bridging Visual Content and Linguistic Expression](https://doi.org/10.1109/ICSPCRE62303.2024.10675203), IEEE ICSPCRE 2024
 
 ---
 
@@ -90,6 +95,6 @@ I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where
 
 <div align="center">
 
-*"Engineer AI that runs the real world — not just demos."*
+*"The model is the easy part — I build the tested software around it."*
 
 </div>
