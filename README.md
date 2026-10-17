@@ -13,18 +13,6 @@
 
 ---
 
-## About Me
-
-I'm Apoorv — a Founding AI Engineer at **[Node2.io](https://node2.io)**, where I lead the design and deployment of AI systems that operate at infrastructure scale. My focus is taking applied AI from research artifacts to production platforms that real businesses depend on.
-
-- Building AI-driven infrastructure for **predictive maintenance, energy optimization, and smart buildings**
-- Designing **scalable ML pipelines, REST APIs, and CI/CD-integrated deployment** workflows for production AI
-- Currently going deeper into **LLMs, MLOps, and large-scale system design**
-- IEEE-published researcher — *Multimodal AI (CNN + Transformer image captioning), 2024*
-- Open to collaborating on **applied AI products, early-stage startups, and research-driven work**
-
-<sub>B.E. Computer Science, Chandigarh University &nbsp;·&nbsp; AWS Cloud Technical Essentials &nbsp;·&nbsp; ML in Production — DeepLearning.AI</sub>
-
 ---
 
 ## Tech Stack
