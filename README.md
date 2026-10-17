@@ -27,6 +27,30 @@ I'm Apoorv — a Python software engineer who builds backend services, REST APIs
 
 ---
 
+## Selected Projects
+
+### Fraud Radar — real-time card-fraud scoring with explanations
+
+[Repository](https://github.com/apoorvrajdev/fraud-radar) · [Live demo](https://fraud-radar-lilac.vercel.app) · [24-second demo video](https://github.com/apoorvrajdev/fraud-radar#-product-demo)
+
+A FastAPI service that scores card transactions by combining **6 deterministic business rules with an XGBoost model**, attaches a **SHAP attribution to every decision**, and lands flagged transactions in an analyst review queue with an append-only audit log. React + TypeScript dashboard for KPIs, flagged transactions and analyst decisions.
+
+- Data layer on SQLAlchemy (SQLite in development, Postgres-compatible schemas) with exact decimal amounts, database constraints, versioned migrations and retry-safe ingestion via idempotency keys — a retried request is never stored twice
+- Service-layer scoring latency p50 **3.7 ms**; **1,407 unit and integration tests**, `ruff` and `mypy --strict` in CI
+- Evaluation reported honestly: PR-AUC **0.93** on a held-out fold of the project's own synthetic generator, and a separate PR-AUC **0.77** on 284,807 real anonymised transactions (ULB) on an isolated track. These measure how learnable the datasets are, not production fraud-detection effectiveness
+
+### Image Captioning System — IEEE-published research, shipped as a tested app
+
+[Repository](https://github.com/apoorvrajdev/image-captioning-system) · [Live app](https://image-captioning-system.vercel.app) · [27-second demo video](https://github.com/apoorvrajdev/image-captioning-system#-product-demo) · [Paper](https://doi.org/10.1109/ICSPCRE62303.2024.10675203)
+
+The InceptionV3 + Transformer captioning model from my IEEE paper, rebuilt from a research notebook into an installable, typed Python package, a Dockerized FastAPI service on Hugging Face Spaces and a React app on Vercel. Greedy or beam-search decoding, with input validation and clear error responses at the API boundary.
+
+- Retrained in TensorFlow on a 120,000-caption COCO 2017 sample with an image-level train/validation split, after finding and fixing a validation bug inherited from the original research code
+- **563 pytest tests** (Python 3.10 and 3.11) and **27 Playwright end-to-end tests** run on every change; deployment passes only after the model loads and returns a real caption
+- Evaluated with BLEU, METEOR, ROUGE-L and CIDEr; a pre-registered, blinded audit showed most of an apparent BLEU-4 gap against the paper came from the number of reference captions, not the model
+
+---
+
 ## Tech Stack
 
 **Languages**
