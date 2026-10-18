@@ -29,11 +29,11 @@ I'm Apoorv — a Python software engineer who builds backend services, REST APIs
 
 ## Meet Me in 60 Seconds
 
-<div align="center">
+
 
 https://github.com/user-attachments/assets/ed85cead-67ed-4e3d-bc2c-a31d65dfed1f
 
-
+<div align="center">
 </div>
 
 ---
