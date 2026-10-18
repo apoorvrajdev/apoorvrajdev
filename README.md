@@ -29,22 +29,11 @@ I'm Apoorv — a Python software engineer who builds backend services, REST APIs
 
 ## Meet Me in 60 Seconds
 
-
+<div align="center">
 
 https://github.com/user-attachments/assets/ed85cead-67ed-4e3d-bc2c-a31d65dfed1f
 
 
-
-<div align="center">
-
-<!--
-  INLINE PLAYER SLOT. GitHub renders a video player only for attachments uploaded through its web editor
-  (https://github.com/user-attachments/assets/...). To enable the player: open this file in the GitHub web editor,
-  drag apoorv-raj-introduction-web.mp4 (7.7 MB, under the 10 MB free-plan video limit; download it from the
-  intro-video-v1 release) into the editor, then replace the "<a href=...poster...>" block below with the single URL
-  line GitHub inserts. Keep the <sub> caption line.
--->
-<a href="https://github.com/apoorvrajdev/apoorvrajdev/releases/download/intro-video-v1/apoorv-raj-introduction-web.mp4" title="Play the introduction video (MP4, 58 s, 1080p)">
   <img src="assets/introduction-poster.jpg" alt="Play: Apoorv Raj, a 58-second introduction. Python software engineer turning machine-learning models into tested, deployed software. Shows Fraud Radar, the Image Captioning System and Node2.io work." width="840" />
 </a>
 
