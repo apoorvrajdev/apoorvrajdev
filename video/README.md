@@ -8,11 +8,12 @@ personal introduction, rendered by HyperFrames 0.8.58, and narrated with Kokoro-
 
 | File | Where | Details |
 |---|---|---|
-| `apoorv-raj-introduction.mp4` | [GitHub Release `intro-video-v1`](https://github.com/apoorvrajdev/apoorvrajdev/releases/tag/intro-video-v1) | 1920×1080, 30 fps, 1,752 frames, 58.40 s, H.264 (CRF 22) + AAC 48 kHz stereo, 11.5 MB, faststart. Frame 0 is the poster. |
+| `apoorv-raj-introduction-web.mp4` | [GitHub Release `intro-video-v1`](https://github.com/apoorvrajdev/apoorvrajdev/releases/tag/intro-video-v1), and the README link | 1920×1080, 30 fps, 1,752 frames, 58.40 s, H.264 (CRF 25) + AAC 128 kbps 48 kHz stereo, 7.7 MB, faststart. Under GitHub's 10 MB free-plan video attachment limit, so it can be dragged into the README web editor to get an inline player. Frame 0 is the poster. |
+| `apoorv-raj-introduction.mp4` | same release | Higher-bitrate 1080p encode (CRF 22), 11.5 MB |
 | `apoorv-raj-introduction.jpg` | same release | Clean poster frame (scene 1 at 6.7 s), 1920×1080 |
 | `assets/introduction-poster.jpg` | this repository | The README thumbnail: the poster frame plus a play affordance |
 
-Validation performed on the delivered MP4: `hyperframes check` passed with zero errors (runtime, layout, motion and
+Validation performed on the delivered MP4s (the 7.7 MB web encode was re-checked the same way, plus a VMAF comparison against the 35.5 MB master): `hyperframes check` passed with zero errors (runtime, layout, motion and
 53/53 WCAG AA contrast checks); `ffprobe` confirms the dimensions, frame rate, frame count, duration and audio
 stream; a full `ffmpeg` decode reports no errors; frame 0 matches the poster at PSNR 46 dB; loudness inside the six
 narration windows averages about −24 dB versus about −31 dB in the music-only gaps, so the narration is present and

@@ -31,12 +31,18 @@ I'm Apoorv — a Python software engineer who builds backend services, REST APIs
 
 <div align="center">
 
-<!-- Video: hosted as a GitHub Release asset (intro-video-v1). Replace VIDEO_URL below to point at a different host. -->
-<a href="https://github.com/apoorvrajdev/apoorvrajdev/releases/download/intro-video-v1/apoorv-raj-introduction.mp4" title="Play the introduction video (MP4, 58 s, 1080p)">
+<!--
+  INLINE PLAYER SLOT. GitHub renders a video player only for attachments uploaded through its web editor
+  (https://github.com/user-attachments/assets/...). To enable the player: open this file in the GitHub web editor,
+  drag apoorv-raj-introduction-web.mp4 (7.7 MB, under the 10 MB free-plan video limit; download it from the
+  intro-video-v1 release) into the editor, then replace the "<a href=...poster...>" block below with the single URL
+  line GitHub inserts. Keep the <sub> caption line.
+-->
+<a href="https://github.com/apoorvrajdev/apoorvrajdev/releases/download/intro-video-v1/apoorv-raj-introduction-web.mp4" title="Play the introduction video (MP4, 58 s, 1080p)">
   <img src="assets/introduction-poster.jpg" alt="Play: Apoorv Raj, a 58-second introduction. Python software engineer turning machine-learning models into tested, deployed software. Shows Fraud Radar, the Image Captioning System and Node2.io work." width="840" />
 </a>
 
-<sub>▶ Click to play (MP4, 1920×1080, 58 s, narrated) &nbsp;·&nbsp; <a href="video/narration-script.md">Read the script</a> &nbsp;·&nbsp; <a href="video/README.md">How it was made</a></sub>
+<sub>▶ Click to play (MP4, 1920×1080, 58 s, narrated, 7.7 MB) &nbsp;·&nbsp; <a href="video/narration-script.md">Read the script</a> &nbsp;·&nbsp; <a href="video/README.md">How it was made</a></sub>
 
 </div>
 
