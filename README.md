@@ -15,7 +15,15 @@
 
 ## About Me
 
+I'm Apoorv — a Python software engineer who builds backend services, REST APIs and data-driven applications, and who likes taking machine-learning models the rest of the way: validated inputs, reliable data handling, automated tests and repeatable deployments.
 
+- **Now:** AI Engineer (independent contractor, founding contributor) at **[Node2.io](https://www.node2.io)** — Python/FastAPI AI services for a PropTech SaaS, including an LLM booking assistant built with LangChain tool calling, a complaint-prioritisation engine, and resident/staff features in a Next.js + TypeScript app on PostgreSQL (Supabase)
+- **Backend & data:** FastAPI, Pydantic validation, SQLAlchemy, schema design, constraints and Alembic migrations on PostgreSQL and SQLite
+- **Applied ML:** XGBoost and TensorFlow models served behind tested APIs, with evaluation and explainability (SHAP) treated as part of the product
+- **Research:** IEEE-published — *AI Narratives: Bridging Visual Content and Linguistic Expression* (CNN + Transformer image captioning), ICSPCRE 2024
+- Open to software engineering and applied-AI roles, and to collaborating on research-driven projects
+
+<sub>B.E. Computer Science & Engineering, Chandigarh University (2024) &nbsp;·&nbsp; Python for Data Science, AI & Development — IBM &nbsp;·&nbsp; AWS Cloud Technical Essentials — AWS</sub>
 
 ---
 
